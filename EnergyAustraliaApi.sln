@@ -5,6 +5,14 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnergyAustraliaApi", "EnergyAustraliaApi\EnergyAustraliaApi.csproj", "{141D2100-B9D5-4B91-B006-9CC2B5BE06E4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facade", "Facade\Facade.csproj", "{E1613812-0ACC-4BA8-896E-56E3FBAF0453}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{9FBE6A36-423B-4145-8892-C974DA327FBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domains", "Domains\Domains.csproj", "{4315473A-550D-4970-8AB8-6541DEAB0078}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{FA3AA143-BB51-4225-8751-56254B6E1D86}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,22 @@ Global
 		{141D2100-B9D5-4B91-B006-9CC2B5BE06E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{141D2100-B9D5-4B91-B006-9CC2B5BE06E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{141D2100-B9D5-4B91-B006-9CC2B5BE06E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1613812-0ACC-4BA8-896E-56E3FBAF0453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1613812-0ACC-4BA8-896E-56E3FBAF0453}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1613812-0ACC-4BA8-896E-56E3FBAF0453}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1613812-0ACC-4BA8-896E-56E3FBAF0453}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FBE6A36-423B-4145-8892-C974DA327FBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FBE6A36-423B-4145-8892-C974DA327FBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FBE6A36-423B-4145-8892-C974DA327FBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FBE6A36-423B-4145-8892-C974DA327FBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4315473A-550D-4970-8AB8-6541DEAB0078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4315473A-550D-4970-8AB8-6541DEAB0078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4315473A-550D-4970-8AB8-6541DEAB0078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4315473A-550D-4970-8AB8-6541DEAB0078}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA3AA143-BB51-4225-8751-56254B6E1D86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA3AA143-BB51-4225-8751-56254B6E1D86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA3AA143-BB51-4225-8751-56254B6E1D86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA3AA143-BB51-4225-8751-56254B6E1D86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

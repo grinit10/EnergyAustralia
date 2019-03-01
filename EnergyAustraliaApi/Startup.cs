@@ -1,3 +1,5 @@
+using Contracts;
+using Facade;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -5,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Services;
 
 namespace EnergyAustraliaApi
 {
@@ -21,7 +24,8 @@ namespace EnergyAustraliaApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
+            services.AddSingleton<IHelperFacade, HelperFacade>();
+            services.AddSingleton<ICarShowService, CarShowService>();
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
