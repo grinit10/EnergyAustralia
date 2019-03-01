@@ -19,12 +19,13 @@ namespace Services
         {
             IList<CarShow> carShows = await _helperFacade.GetAllResponseAsync(EntityTypes.cars);
             IList<Make> makes = new List<Make>();
-            NewMethod(carShows, makes);
+            if (carShows.Count > 0)
+                ConvertResponse(carShows, makes);
 
             return makes;
         }
 
-        private static void NewMethod(IList<CarShow> carShows, IList<Make> makes)
+        private static void ConvertResponse(IList<CarShow> carShows, IList<Make> makes)
         {
             foreach (var carShow in carShows)
             {
