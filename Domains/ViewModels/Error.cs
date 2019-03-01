@@ -7,8 +7,8 @@ namespace Domains.ViewModels
 {
     public class Error
     {
-        [JsonProperty("id")]
-        public int Id { get; set; }
+        [JsonProperty("statusCode")]
+        public int StatusCode { get; set; }
 
         [JsonProperty("message")]
         public string Message { get; set; }

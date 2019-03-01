@@ -13,7 +13,7 @@ namespace EnergyAustraliaApi
         public InernalErrorObjectResult(Error error)
             : base(error)
         {
-            StatusCode = error.Id;
+            StatusCode = error.StatusCode;
             Message = error.Message;
             Description = error.Description;
         }

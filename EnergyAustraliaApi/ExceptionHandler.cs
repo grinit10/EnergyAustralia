@@ -16,22 +16,22 @@ namespace EnergyAustraliaApi
             if (exceptionType.Contains("System.Data.DuplicateNameException"))
             {
                 context.Result = new InernalErrorObjectResult(
-                new Error { Id = 409, Description = "The request could not be completed because of a conflict", Message = context.Exception.Message });
+                new Error { StatusCode = 409, Description = "The request could not be completed because of a conflict", Message = context.Exception.Message });
             }
             else if (exceptionType.Contains("System.Data.DataException"))
             {
                 context.Result = new InernalErrorObjectResult(
-                new Error { Id = 404, Description = "The reqested Resource is Not Found", Message = context.Exception.Message });
+                new Error { StatusCode = 404, Description = "The reqested Resource is Not Found", Message = context.Exception.Message });
             }
             else if (exceptionType.Contains("System.FormatException"))
             {
                 context.Result = new InernalErrorObjectResult(
-                new Error { Id = 400, Description = "Bad request", Message = context.Exception.Message });
+                new Error { StatusCode = 400, Description = "Bad request", Message = context.Exception.Message });
             }
             else
             {
                 context.Result = new InernalErrorObjectResult(
-                new Error { Id = 500, Description = "The server encountered an unexpected condition which prevented it from fulfilling the request", Message = context.Exception.Message });
+                new Error { StatusCode = 500, Description = "The server encountered an unexpected condition which prevented it from fulfilling the request", Message = context.Exception.Message });
             }
         }
     }
