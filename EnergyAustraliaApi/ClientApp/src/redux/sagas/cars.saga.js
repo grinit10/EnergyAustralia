@@ -8,11 +8,11 @@ function* handleCarsLoad() {
     try
     {
         const res = yield call(carsApi.fetchCars);
-        yield put(actionCreators.loadimagesSuccess(res.data));
+        yield put(actionCreators.loadcarsSuccess(res.data));
     }
     catch(ex)
     {
-        yield put(actionCreators.loadimagesError(ex.response.data)) ;
+        yield put(actionCreators.loadcarsError(ex.response.data)) ;
     }
 }
 
