@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Card, CardTitle, CardText, CardSubtitle, CardBody, Alert } from 'reactstrap';
+import { Card, CardTitle, CardText, CardSubtitle, CardBody } from 'reactstrap';
 
 import { loadcars } from '../redux/actions/actioncreators.cars'
 
