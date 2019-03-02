@@ -10,7 +10,6 @@ const configureStore = () => {
     const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
     sagaMiddleware.run(watcherSaga);
     store.dispatch({type:'CARS_LOAD'});
-    console.log(store.getState());
     return store;
 }
 export default configureStore;
