@@ -1,24 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Card, CardTitle, CardText, CardSubtitle, CardBody } from 'reactstrap';
+import { Card, CardTitle, CardText, CardSubtitle, CardBody, Alert } from 'reactstrap';
 
 import { loadcars } from '../redux/actions/actioncreators.cars'
 
 class CarsList extends Component {
-
-    state = {
-        collapse: false
-    }
-
-    toggle = () => {
-        this.setState({ collapse: !this.state.collapse });
-    }
     render() {
-        console.log(Object.values(this.props.cars))
+        console.log(this.props);
 
-        const showelement  = shows => Object.values(shows).length > 0 ? (Object.values(shows)
-        .map(show => show.name
-        ) + ' ') : 'no show';
+        const showelement = shows => Object.values(shows).length > 0 ? (Object.values(shows)
+            .map(show => show.name
+            ) + ' ') : 'no show';
 
         const modelelement = models => Object.values(models).length > 0 ? (Object.values(models)
             .map(model =>
@@ -38,8 +30,16 @@ class CarsList extends Component {
                     </CardBody>
                 </Card>
             ) : null;
+
         return (
-            carselement
+            this.props.error ? (
+                <div className="alert alert-danger alert-dismissible fade in">
+                    <strong>{this.props.error.description}! Please 
+                    <a href="/cars" className="close" data-dismiss="alert" aria-label="close">retry</a>
+                    </strong>
+                </div>
+            )
+                : carselement
         );
     }
 
