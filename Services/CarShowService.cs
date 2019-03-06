@@ -10,8 +10,8 @@ namespace Services
 {
     public class CarShowService : ICarShowService
     {
-        private IHelperFacade _helperFacade { get; set; }
-        public CarShowService(IHelperFacade helperFacade)
+        private IHelperFacade<CarShow> _helperFacade { get; set; }
+        public CarShowService(IHelperFacade<CarShow> helperFacade)
         {
             _helperFacade = helperFacade;
         }

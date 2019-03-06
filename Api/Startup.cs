@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Contracts;
+using Domains.ViewModels;
 using Facade;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -41,7 +42,7 @@ namespace Api
             {
                 options.Filters.Add(new CorsAuthorizationFilterFactory("AllowMyOrigin"));
             });
-            services.AddSingleton<IHelperFacade, HelperFacade>();
+            services.AddSingleton<IHelperFacade<CarShow>, CarShowFacade>();
             services.AddSingleton<ICarShowService, CarShowService>();
         }
 

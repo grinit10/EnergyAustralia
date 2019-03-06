@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace Facade
 {
-    public class HelperFacade: IHelperFacade
+    public class CarShowFacade: IHelperFacade<CarShow>
     {
         public async Task<IList<CarShow>> GetAllResponseAsync(EntityTypes entityType)
         {
@@ -24,11 +24,11 @@ namespace Facade
 
         private static async Task<IList<CarShow>> GetShows(string entity)
         {
-            using (var client = new HttpClient())
+            using (HttpClient client = new HttpClient())
             {
-                var url = new Uri($"http://eacodingtest.digital.energyaustralia.com.au/api/v1/" + EntityTypes.cars.ToString());
-                var response = await client.GetAsync(url);
                 string json;
+                var url = new Uri($"http://eacodingtest.digital.energyaustralia.com.au/api/v1/" + entity);
+                var response = await client.GetAsync(url);
                 using (var content = response.Content)
                 {
                     json = await content.ReadAsStringAsync();

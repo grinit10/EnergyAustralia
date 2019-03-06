@@ -6,8 +6,8 @@ using System.Collections.Generic;
 
 namespace Contracts
 {
-    public interface IHelperFacade
+    public interface IHelperFacade<T> where T: class
     {
-        Task<IList<CarShow>> GetAllResponseAsync(EntityTypes entityType);
+        Task<IList<T>> GetAllResponseAsync(EntityTypes entityType);
     }
 }
