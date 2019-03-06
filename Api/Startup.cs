@@ -32,7 +32,15 @@ namespace Api
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
                 .AddMvcOptions(o => o.Filters.Add(new ExceptionHandler()));
-            
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
+                {
+                    Version = "1.0",
+                    Title = "Cars Api",
+                    Description = "Api for getting cars models and shows where the models had appeared"
+                });
+            });
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowMyOrigin",
@@ -60,6 +68,11 @@ namespace Api
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api for getting cars models and shows where the models had appeared");
+            });
         }
     }
 }
