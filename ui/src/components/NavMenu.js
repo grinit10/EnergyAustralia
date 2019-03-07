@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import { Glyphicon, Nav, Navbar, NavItem } from 'react-bootstrap';
+import { Nav, Navbar, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import './NavMenu.css';
 
@@ -15,12 +15,14 @@ export default props => (
       <Nav>
         <LinkContainer to={'/'} exact>
           <NavItem>
-            <Glyphicon glyph='home' /> Home
+            {/* <Glyphicon glyph='home' />  */}
+            Home
           </NavItem>
         </LinkContainer>
         <LinkContainer to={'/cars'}>
           <NavItem>
-            <Glyphicon glyph='plane' /> Cars
+            {/* <Glyphicon glyph='plane' />  */}
+            Cars
           </NavItem>
         </LinkContainer>
       </Nav>

@@ -11,7 +11,7 @@ const carsReducer = (state = initState, action) => {
         case carsaction.LOAD_FAILURE:
             return { ...state }
         default:
-            return [...state]
+            return {...state}
     }
 }
 
