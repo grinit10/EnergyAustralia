@@ -1,3 +1,3 @@
-import watcherCarsLoad from './cars.saga'
+import watcherSaga from './cars.saga'
 
-export default watcherCarsLoad
+export default watcherSaga
