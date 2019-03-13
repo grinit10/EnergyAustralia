@@ -47,16 +47,12 @@ class Home extends Component {
     );
   }
 
-  componentDidMount() {
-    this.props.loadauth();
-  }
   handleAuth = () =>
     this.props.auth.name ? this.props.logout() : this.props.login();
 }
 
 const mapStateToProps = state => ({ auth: state.auth });
 const mapDispatchToProps = dispatch => ({
-  loadauth: () => dispatch(loadauth()),
   login: () => dispatch(login()),
   logout: () => dispatch(logout())
 });
