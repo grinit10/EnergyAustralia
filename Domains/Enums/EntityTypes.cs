@@ -2,6 +2,6 @@
 {
     public enum EntityTypes
     {
-        cars
+        Cars
     }
 }

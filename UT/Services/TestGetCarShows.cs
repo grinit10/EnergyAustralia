@@ -10,7 +10,7 @@ namespace UT.Services
     public class TestGetCarShows: CarShowServicetestConfig
     {
         [SetUp]
-        public void Setup()
+        public new void Setup()
         {
             base.SetUp();
         }

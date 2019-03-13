@@ -12,11 +12,8 @@ namespace Api
         {
             StatusCode = error.StatusCode;
             Message = error.Message;
-            Description = error.Description;
         }
 
         public string Message { get; }
-
-        private string Description { get; }
     }
 }

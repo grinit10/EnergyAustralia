@@ -10,12 +10,12 @@ namespace Api.Controllers
     [ApiController]
     public class CarShowController : ControllerBase
     {
-        private ICarShowService _carShowService { get; set; }
+        private ICarShowService CarShowService { get; set; }
         /// <summary>Initializes a new instance of the <see cref="CarShowController"/> class.</summary>
         /// <param name="carShowService">The car show service.</param>
         public CarShowController(ICarShowService carShowService)
         {
-            _carShowService = carShowService;
+            CarShowService = carShowService;
         }
 
         /// <summary>Gets the make asynchronously.</summary>
@@ -23,7 +23,7 @@ namespace Api.Controllers
         [HttpGet("[action]")]
         public async Task<IList<Make>> GetMakeAsync()
         {
-            return await _carShowService.GetCarShows();
+            return await CarShowService.GetCarShows();
         }
     }
 }

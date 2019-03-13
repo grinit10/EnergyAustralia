@@ -19,7 +19,7 @@ namespace UT.Services
         {
             base.SetUp();
             TestCarShows = new List<CarShow>();
-            TestCarShows.AddRange(baseFixture.CreateMany<CarShow>(3));
+            TestCarShows.AddRange(BaseFixture.CreateMany<CarShow>(3));
             MockCarshowFacede = new Mock<IHelperFacade<CarShow>>();
             SystemUnderTest = new CarShowService(MockCarshowFacede.Object);
         }

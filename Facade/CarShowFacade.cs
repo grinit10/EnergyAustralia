@@ -13,13 +13,13 @@ namespace Facade
 {
     public class CarShowFacade: IHelperFacade<CarShow>
     {
-        private static string _endpointBaseUrl { get; set; }
+        private static string EndpointBaseUrl { get; set; }
 
         /// <summary>Initializes a new instance of the <see cref="CarShowFacade"/> class.</summary>
         /// <param name="env">The env.</param>
         public CarShowFacade(IOptions<EnvironmentConfig> env)
         {
-            _endpointBaseUrl = env.Value.EndpointBaseUrl;
+            EndpointBaseUrl = env.Value.EndpointBaseUrl;
         }
         /// <summary>Gets all response asynchronously based on entity type.</summary>
         /// <param name="entityType">Type of the entity.</param>
@@ -28,8 +28,8 @@ namespace Facade
         {
             switch (entityType)
             {
-                case EntityTypes.cars:
-                    return await GetShows(EntityTypes.cars.ToString());
+                case EntityTypes.Cars:
+                    return await GetShows(EntityTypes.Cars.ToString());
                 default:
                     return null;
             }
@@ -43,7 +43,7 @@ namespace Facade
             using (HttpClient client = new HttpClient())
             {
                 string json;
-                var url = new Uri(_endpointBaseUrl + entity);
+                var url = new Uri(EndpointBaseUrl + entity);
                 var response = await client.GetAsync(url);
                 using (var content = response.Content)
                 {

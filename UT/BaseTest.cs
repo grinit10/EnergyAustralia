@@ -8,15 +8,15 @@ namespace UT
     [ExcludeFromCodeCoverage]
     public abstract class BaseTest
     {
-        protected Fixture baseFixture;
+        protected Fixture BaseFixture;
 
         protected virtual void SetUp()
         {
-            baseFixture = new Fixture();
-            baseFixture.Customize(new AutoMoqCustomization());
+            BaseFixture = new Fixture();
+            BaseFixture.Customize(new AutoMoqCustomization());
 
-            baseFixture.Behaviors.OfType<ThrowingRecursionBehavior>().ToList().ForEach(b => baseFixture.Behaviors.Remove(b));
-            baseFixture.Behaviors.Add(new OmitOnRecursionBehavior());
+            BaseFixture.Behaviors.OfType<ThrowingRecursionBehavior>().ToList().ForEach(b => BaseFixture.Behaviors.Remove(b));
+            BaseFixture.Behaviors.Add(new OmitOnRecursionBehavior());
         }
     }
 }
