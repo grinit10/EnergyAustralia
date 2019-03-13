@@ -20,7 +20,7 @@ export const requiresAuth = Childcomponent => {
             }
         }
         redirect = () => this.props.history.push('/');
-        render = () => (this.props.user ? null : <Childcomponent {...this.props} />)
+        render = () => (this.props.auth.name ? <Childcomponent {...this.props} /> : null)
     };
     const mapStateToProps = state => {
         return {
