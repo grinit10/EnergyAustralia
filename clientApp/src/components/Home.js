@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { loadauth, logout, login } from '../redux/actions/actioncreators.auth';
+import { logout, login } from '../redux/actions/actioncreators.auth';
 
 class Home extends Component {
   render() {
