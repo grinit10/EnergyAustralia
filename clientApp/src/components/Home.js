@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
 import { logout, login } from '../redux/actions/actioncreators.auth';
 
-class Home extends Component {
+class Home extends PureComponent {
   render() {
     return (
       <div>

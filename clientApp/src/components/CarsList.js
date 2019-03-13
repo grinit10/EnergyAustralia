@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Card, CardTitle, CardText, CardSubtitle, CardBody } from 'reactstrap';
 
 import { loadcars } from '../redux/actions/actioncreators.cars'
 
-class CarsList extends Component {
+class CarsList extends PureComponent {
     
     render() {
         console.log(process.env.REACT_APP_TEST_VAR);
