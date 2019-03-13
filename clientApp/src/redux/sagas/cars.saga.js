@@ -1,7 +1,6 @@
 import { takeEvery, put, call } from 'redux-saga/effects';
 
 import * as carsActionCreators from '../actions/actioncreators.cars';
-import * as authActionCreators from '../actions/actioncreators.auth';
 
 import { carsaction } from './../actions';
 import carsApi from '../apis/cars.api';
@@ -18,13 +17,7 @@ function* handleCarsLoad() {
     }
 }
 
-function* handleAuthLoad() {
-    yield console.log('logging in...');
-    yield put(authActionCreators.loadauthSuccess({ name: 'Arnab', role: 'user' }));
-}
-
 function* watcherCarsLoad() {
-    yield takeEvery(carsaction.AUTH_LOAD, handleAuthLoad);
     yield takeEvery(carsaction.LOAD, handleCarsLoad)
 }
 export default watcherCarsLoad

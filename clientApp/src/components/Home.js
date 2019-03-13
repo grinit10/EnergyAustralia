@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { loadauth, logout } from '../redux/actions/actioncreators.auth';
+import { loadauth, logout, login } from '../redux/actions/actioncreators.auth';
 
 class Home extends Component {
   render() {
@@ -47,13 +47,17 @@ class Home extends Component {
     );
   }
 
+  componentDidMount() {
+    this.props.loadauth();
+  }
   handleAuth = () =>
     this.props.auth.name ? this.props.logout() : this.props.login();
 }
 
 const mapStateToProps = state => ({ auth: state.auth });
 const mapDispatchToProps = dispatch => ({
-  login: () => dispatch(loadauth()),
+  loadauth: () => dispatch(loadauth()),
+  login: () => dispatch(login()),
   logout: () => dispatch(logout())
 });
 export default connect(

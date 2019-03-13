@@ -1,3 +1,10 @@
-import watcherSaga from './cars.saga'
+import { all, fork } from 'redux-saga/effects';
+import watcherCarsSaga from './cars.saga'
+import watcherAuthSaga from './auth.saga'
 
-export default watcherSaga
+export default function* rootSaga() {
+    yield all([
+        fork(watcherCarsSaga),
+        fork(watcherAuthSaga)
+    ])
+}
